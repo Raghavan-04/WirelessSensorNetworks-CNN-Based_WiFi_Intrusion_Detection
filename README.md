@@ -1,6 +1,6 @@
 # Enhanced CNN-Based WiFi Intrusion Detection System for WSN
-
-## Abstract
+Ongoing....
+## Abstract 
 This project addresses the critical challenge of detecting rare network attacks in 
 WiFi environments using Convolutional Neural Networks (CNNs). Using the Aegean 
 WiFi Intrusion Dataset (AWID), which contains 575,643 network samples with 
