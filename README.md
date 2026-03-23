@@ -1,4 +1,22 @@
+# Enhanced CNN-Based WiFi Intrusion Detection System for WSN
 
+## Abstract
+This project addresses the critical challenge of detecting rare network attacks in 
+WiFi environments using Convolutional Neural Networks (CNNs). Using the Aegean 
+WiFi Intrusion Dataset (AWID), which contains 575,643 network samples with 
+severe class imbalance (92% normal traffic vs 8% attacks), we implement and 
+compare multiple strategies to improve detection of minority attack classes 
+(flooding, impersonation, and injection). Our approach demonstrates how 
+class weighting, SMOTE oversampling, and focal loss can significantly improve 
+attack detection rates while maintaining high accuracy for normal traffic.
+
+## Problem Statement
+Network intrusion detection systems face a fundamental challenge: attacks are 
+rare by nature, creating severely imbalanced datasets. Traditional machine 
+learning models trained on such data achieve high accuracy by simply predicting 
+the majority class (normal), failing to detect critical security threats. 
+This project tackles the problem of detecting rare WiFi attacks despite 
+massive class imbalance.
 
 ## **1. CLASS IMBALANCE PROBLEM IN INTRUSION DETECTION**
 
