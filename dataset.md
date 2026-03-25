@@ -378,3 +378,31 @@ The AWID dataset captures:
 4. **Feature interactions**: Multiple features combine to indicate attacks
 
 This is why sophisticated ML models and class balancing techniques are needed to detect the rare but important attack patterns!
+
+---
+## **Selection process** 
+
+Based on the paper, the reduction from 154 features down to 13 was achieved through a **multi-stage feature engineering and selection process**, rather than a single automated method. Here is how they did it:
+
+### 1. Initial Reduction: Data Preprocessing (154 → 76)
+The first major reduction happened during data cleaning and preprocessing. The AWID dataset originally contains 154 input features (labeled f1 to f154 in Table 3). The authors applied several filtering steps to get down to 76 features:
+- **Dropping Null Values:** They identified columns with a high percentage of null values (specifically setting a threshold of 50%) and removed those columns entirely.
+- **Removing Redundant Rows:** Rows containing null values were also dropped.
+- **Data Type Conversion:** They converted certain features from float and hexadecimal datatypes to integers, which helps in identifying valid data versus placeholders.
+- **Replacing Placeholders:** Unknown entries ("?") were replaced with "NaN" and subsequently dropped or converted.
+
+These preprocessing steps automatically eliminated a significant portion of the 154 features because many columns in the AWID dataset contain sparse or incomplete data.
+
+### 2. Secondary Reduction: Embedded Feature Selection (76 → 13)
+Once the dataset was cleaned down to 76 relevant features, the authors used a method referred to as **"embedded feature selection."**
+
+Unlike filter methods (which look at statistics) or wrapper methods (which test combinations), embedded methods perform feature selection during the model training process. The paper states:
+> *"We employ an embedded feature selection method integrated into the model training process, identifying the prediction variable's most contributive features."*
+
+While the paper does not explicitly name a specific algorithm (e.g., LASSO or Tree-based importance) for this step, the context suggests that the **Convolutional Neural Network (CNN)** itself played a role in the reduction. CNNs are adept at identifying and extracting the most salient features from high-dimensional data. By analyzing feature weights and contribution to the prediction accuracy during training, the model helped isolate the 13 "pivotal features" that were most relevant for distinguishing between Normal, Flooding, Injection, and Impersonation classes.
+
+### Summary of the Logic
+1.  **154:** Raw dataset attributes.
+2.  **76:** Features that survived the preprocessing phase (removal of nulls/irrelevant columns).
+3.  **13:** A highly refined subset derived from the 76 via embedded feature selection during deep learning training, representing the most critical indicators of security breaches.
+
