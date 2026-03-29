@@ -1,4 +1,4 @@
-# 🎮 Enhanced WSN IDS Simulation - Quick Start Guide
+# WSN IDS Simulation - Quick Start Guide
 
 
 Simulation has been upgraded with:
