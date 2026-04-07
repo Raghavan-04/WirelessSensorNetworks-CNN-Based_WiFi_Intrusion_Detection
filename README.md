@@ -122,9 +122,3 @@ python evaluate.py --test data/test.csv
 ---
 
 
-## 📄 License
-
-This project is for academic purposes. Contact authors for reuse.
-
----
-
