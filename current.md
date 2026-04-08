@@ -1,4 +1,4 @@
-# Project Summary: Intrusion Detection System for WSN
+#  Intrusion Detection System for WSN
 
 ## 📋 **Original Objective**
 
